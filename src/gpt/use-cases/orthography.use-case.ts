@@ -39,15 +39,12 @@ export const orthographyCheckUseCase = async( openai: OpenAI,  options: Options 
         content: prompt,
       }
   ],
-    model: "gpt-3.5-turbo-1106",
+    model: "gpt-3.5-turbo",
     temperature: 0.3,
-    max_tokens: 150,
-    response_format: {
-      type: 'json_object'
-    }
+    max_tokens: 50,
   });
 
-  // console.log(completion);
+  
   const jsonResp = JSON.parse(completion.choices[0].message.content);
 
   return jsonResp;

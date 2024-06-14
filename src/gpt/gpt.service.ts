@@ -21,6 +21,10 @@ export class GptService {
     });
   }
 
+  getApiKey(){
+    return process.env.OPENAI_API_KEY;
+  }
+
 
 
 }
